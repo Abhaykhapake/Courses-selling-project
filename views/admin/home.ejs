@@ -1,0 +1,20 @@
+<%- include("navbar.ejs") %>
+<h2 class="text-center mb-4 pt-4">User Contact Information</h2>
+<table width="100%" class="table table-bordered table-striped">
+    <tr>
+        <th>sr.No</th>
+        <th>User Name</th>
+        <th>User Email</th>
+        <th>user Message</th>
+    </tr>
+    <% for(var i=0;i<contacts.length;i++) { %>
+        <tr>
+            <td><%=i+1%></td>
+            <td><%=contacts[i].user_name%></td>
+            <td><%=contacts[i].user_email%></td>
+            <td><%=contacts[i].user_message%></td>
+        </tr>
+        
+    <% } %>
+</table>
+<%- include("footer.ejs") %>

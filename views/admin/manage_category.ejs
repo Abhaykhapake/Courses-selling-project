@@ -1,0 +1,51 @@
+<%- include("navbar.ejs") %>
+<form action="/admin/save_category" method="post">
+    <div class="container-fluid p-5 bg-white">
+        <div class="row">
+            <div class="col-md_12 text-center">
+                <h3>Manage Category</h3>
+            </div>
+            <div class="col-md-6 mt-3">
+                Category Name
+                <input type="text" name="category_name" class="form_control">
+            </div>
+            <div class="col-md-6 mt-3">
+                <lebal>Category Details</lebal>
+                <textarea type="text" name="category_details" class="form_control"></textarea>
+            </div>
+            <br><br>
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary">SAVE CATEGORY</button>
+            </div>
+        </div>
+    </div>
+ </form>
+ <br><br><hr><br>
+
+ <div class="container-fluid">
+    <table class="table table-sm table-bordered">
+    <tr>
+    <th></th>
+    <th>SN</th>
+    <th>NAME</th>
+    <th>DETAILS</th>
+    </tr>
+    <% for (var i=0;i<cats.length;i++)
+    { %>
+        <tr>
+            <td style="white-space: nowrap;width:5%;">
+                <button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
+                <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+            </td>
+            <td><%=i+1%></td>
+            <td><%=cats[i].category_name%></td>
+            <td width="70%">
+                <div style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden; width:800px;" >
+                    <%=cats[i].category_details%>
+                </div>
+            </td>
+        </tr>
+        <% } %>
+   </table>
+ </div>
+ <%- include("footer.ejs") %>

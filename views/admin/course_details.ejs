@@ -1,0 +1,87 @@
+<%- include("navbar.ejs") %>
+
+<div class="container-fluid p-5 bg-white">
+    <div class="row">
+
+          <div class="col-md-12 text-center mb-4">
+            <h3 class="alert alert-primary"><b><%=c_det[0].course_name%></b></b></h3>
+          </div>
+
+          <div class="col-md-6 text-center ">
+            <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12 mb-2">
+                    course name
+                     <b class="d-block ps-3"><%=c_det[0].course_name%></b>
+                  </div>
+                  <div class="col-md-12 mb-2">
+                    category
+                     <b class="d-block ps-3"><%=c_det[0].category_name%></b>
+                  </div>
+                  <div class="col-md-12 mb-2">
+                    Duration
+                     <b class="d-block ps-3"><%=c_det[0].course_duration%></b>
+                  </div>
+                  <div class="col-md-12 mb-2">
+                    price
+                     <b class="d-block ps-3"><%=c_det[0].course_price%></b>
+                  </div>
+                  <div class="col-md-12 mb-2">
+                    Mentor
+                     <b class="d-block ps-3"><%=c_det[0].course_mentor%></b>
+                  </div>
+                  <div class="col-md-12 mb-2">
+                    link
+                     <b class="d-block ps-3">
+                        <%=(c_det[0].course_link) ? c_det[0].course_link:'--' %>
+                    </b>
+                  </div>
+                  <div class="col-md-12 mb-2">
+                    platform
+                     <b class="d-block ps-3"><%=c_det[0].course_platform%></b>
+                  </div>
+                  
+                  <div class="col-md-12 mb-2">
+                    Image
+                    <a href="" onclick="open_file('/uploads/<%=c_det[0].course_image%>')">
+                     <b class="d-block ps-3">view</b>
+                     </a>
+                  </div>
+            
+                  
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 text-center ">
+            <div class="container-fluid">
+                2222
+            </div>
+          </div>
+          <div class="col-md-12 mb-2">
+            Details
+             <b class="d-block ps-3"><%=c_det[0].course_details.replaceAll("\n","<br>")%></b>
+          </div>
+    </div>
+</div>
+
+<script>
+    function open_file(img_path)
+    {
+        open(img_path,"","height=300px;width=300px;");
+    }
+</script>
+
+
+
+<%- include("footer.ejs") %>
+
+
+
+
+
+
+
+
+
+

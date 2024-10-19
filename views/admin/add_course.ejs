@@ -1,0 +1,68 @@
+<%- include("navbar.ejs") %>
+
+<form action="/admin/save_course" method="post" enctype="multipart/form-data">
+
+    <div class="container-fluid p-5 bg-white">
+        <div class="row">
+            <div class="col-md_12 text-center">
+                <h3>Add New course</h3>
+            </div>
+            <div class="col-md_4">
+                <lebal>Course Name*</lebal>
+                <input type="text" name="course_name" class="form-control" required><br>
+            </div>
+            <div class="col-md_4">
+                <select name="course_category_id" class="form-control">
+                    <option disabled selected value="">SELECT CATEGORY</option>
+                    <% for(var i=0;i<cat_list.length;i++){ %>
+                        <option value="<%=cat_list[i].category_id%>"><%=cat_list[i].category_name%></option><br>
+                        <% }%>
+                </select><br>
+            </div>
+
+            <div class="col-md_4">
+                <lebal>Course Duration</lebal>
+                <input type="text" name="course_duration" class="form-control"><br>
+            </div><br><br>
+            <div class="col-md_4">
+                <lebal>Course Price*</lebal>
+                <input type="number" name="course_price" class="form-control" required><br>
+            </div>
+            <div class="col-md_4">
+                <lebal>Course Image*</lebal>
+                <input type="file" name="course_image" class="form-control" accept="index/*" required><br>
+            </div>
+            <div class="col-md_4">
+                <lebal>Course Sample Video</lebal>
+                <input type="file" name="course_sample_video" class="form-control" accept="index/*"><br>
+            </div>
+            <div class="col-md_4">
+                <lebal>Course Mentor*</lebal>
+                <input type="text" name="course_mentor" class="form-control" accept="index/*" required><br>
+            </div><br><br>
+            <div class="col-md_4">
+                <lebal>Course Link</lebal>
+                <input type="text" name="course_link" class="form-control" accept="index/*"><br>
+            </div><br><br>
+            <div class="col-md_4">
+                <lebal>platform*</lebal>
+                <select name="course_platform" class="form-control" required>
+                    <option disabled selected value="">Select platform</option>
+                    <option>Online Live</option>
+                    <option>Online Recorded</option>
+                    <option>Classroom</option>
+                </select><br>
+            </div>
+            <div class="col-md_4">
+                <lebal>Course Details</lebal>
+                <textarea type="text" name="course_details" class="form-control"></textarea><br>
+            </div>
+            <div class="col-md_4 mt-3 text-center">
+                <button class="btn btn-primary">Save Course</button>
+            </div>
+           
+    </div>
+</form>
+
+
+<%- include("footer.ejs") %>

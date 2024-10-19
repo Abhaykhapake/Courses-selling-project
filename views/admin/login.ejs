@@ -1,0 +1,27 @@
+<%-include("navbar.ejs") %>
+<br><br>
+<form action="/admin/do_login" method="post">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 border p-3 ">
+                <h3 class="text-center">admin Login</h3>
+                <br>
+                <lebal>Mobile</lebal>
+                <input type="number" name="admin_mobile" class="form-control">
+                <br>
+                <lebal>Password</lebal>
+                <input type="password" name="admin_password" class="form-control">
+                <br>
+                <div class="text-right">
+                <button class="btn btn-primary">Login Now</button>
+                </div>
+                <br>
+                <h6>New admin, <a href="/admin/register"> Create Account</a></h6>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+<%-include("footer.ejs") %>
